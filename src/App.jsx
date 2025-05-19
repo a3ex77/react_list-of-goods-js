@@ -23,10 +23,10 @@ export const App = () => {
   const [sortBy, setSortBy] = useState('');
   const [isReversed, setIsReversed] = useState(false);
 
-  let visibleItems = goodsFromServer.slice();
+  let visibleItems = [...goodsFromServer];
 
   if (sortBy) {
-    visibleItems = visibleItems.sort((item1, item2) => {
+    visibleItems = [...visibleItems].sort((item1, item2) => {
       switch (sortBy) {
         case SORT_ALPHABETICALLY:
           return item1.localeCompare(item2);
