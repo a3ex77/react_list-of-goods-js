@@ -30,8 +30,10 @@ export const App = () => {
       switch (sortBy) {
         case SORT_ALPHABETICALLY:
           return item1.localeCompare(item2);
+
         case SORT_BY_LENGTH:
           return item1.length - item2.length;
+
         default:
           return 0;
       }
