@@ -23,7 +23,7 @@ export const App = () => {
   const [sortBy, setSortBy] = useState('');
   const [isReversed, setIsReversed] = useState(false);
 
-  let visibleItems = [...goodsFromServer];
+  let visibleItems = goodsFromServer.slice();
 
   if (sortBy) {
     visibleItems = visibleItems.sort((item1, item2) => {
@@ -76,7 +76,7 @@ export const App = () => {
           Reverse
         </button>
 
-        {(sortBy !== '' || isReversed !== false) && (
+        {(sortBy || isReversed) && (
           <button
             type="button"
             className="button is-danger is-light"
